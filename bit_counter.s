@@ -29,5 +29,13 @@
 # Enter a number: 1000
 # The number of set bits is 2017
 
+    .data           #variable used follow this line
+prompt1: .asciiz  "Enter a number:"
+prompt2: .asciiz  "\n The number of set bits from 1 to your number is:"
+                    .globl main
+.text               #program's code after this line
 
-
+  main:
+li  $v0,4           #System call code for print string
+la  $a0,prompt1     #Load address of the prompt1 string
+syscall             #call OS to Print prompt1
